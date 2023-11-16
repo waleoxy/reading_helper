@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { cn } from "../lib/utils";
 
 interface MaxWidthWrapperProps {
   children: ReactNode;
@@ -10,7 +11,8 @@ const MaxWidthWrapper: React.FC<MaxWidthWrapperProps> = ({
   className,
 }) => {
   return (
-    <div className="mx-auto w-full max-w-screen-xl px-2.5 md:px-20">
+    <div
+      className={cn("mx-auto  max-w-screen-2xl px-2.5 md:px-20 ", className)}>
       {children}
     </div>
   );
