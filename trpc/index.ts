@@ -13,8 +13,6 @@ export const appRouter = router({
       throw new TRPCError({ code: "UNAUTHORIZED" });
     }
 
-    console.log(user.id);
-
     const dbUser = await db.user.findFirst({
       where: {
         id: user.id,
