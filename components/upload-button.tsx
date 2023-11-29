@@ -65,7 +65,7 @@ const DropzoneUpload = () => {
 
         const [fileResponse] = res;
 
-        const key = fileResponse.key;
+        const key = fileResponse?.key;
 
         if (!key) {
           return toast({
