@@ -72,7 +72,7 @@ export const appRouter = router({
           fileId,
         },
         orderBy: {
-          createdAt: "asc",
+          createdAt: "desc",
         },
         cursor: cursor ? { id: cursor } : undefined,
         select: {
