@@ -12,9 +12,9 @@ import { useState } from "react";
 interface DashboardDetailPageProps {}
 
 const DashboardDetailPage: React.FC<DashboardDetailPageProps> = ({}) => {
-  const [currentlyDeletingFile, setCurrentlyDeletingFile] = useState<
-    string | null
-  >(null);
+  const [currentlyDeletingFile, setCurrentlyDeletingFile] = useState<{
+    id: string | null;
+  }>({ id: null });
 
   const utils = trpc.useUtils();
 
@@ -28,7 +28,7 @@ const DashboardDetailPage: React.FC<DashboardDetailPageProps> = ({}) => {
       setCurrentlyDeletingFile(id);
     },
     onSettled() {
-      setCurrentlyDeletingFile(null);
+      setCurrentlyDeletingFile({ id: null });
     },
   });
 
