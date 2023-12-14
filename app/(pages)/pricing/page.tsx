@@ -29,10 +29,12 @@ const PricingPage: React.FC<PricingPageProps> = async ({}) => {
         {
           text: "5 pages per PDF",
           footnote: "The maximum amount of pages per PDF-file.",
+          negative: false,
         },
         {
           text: "4MB file size limit",
           footnote: "The maximum file size of a single PDF file.",
+          negative: false,
         },
         {
           text: "Mobile-friendly interface",
