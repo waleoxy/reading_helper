@@ -25,7 +25,7 @@ const DashboardDetailPage: React.FC<DashboardDetailPageProps> = ({}) => {
       utils.getUserFiles.invalidate();
     },
     onMutate(id) {
-      setCurrentlyDeletingFile(id);
+      setCurrentlyDeletingFile(id.id);
     },
     onSettled() {
       setCurrentlyDeletingFile(null);
