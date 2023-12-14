@@ -3,5 +3,8 @@ import { NextRequest } from "next/server";
 
 export async function GET(request: NextRequest, { params }: any) {
   const endpoint = params.kindeAuth;
-  return handleAuth(request, endpoint);
+  return handleAuth(request, endpoint) as
+    | void
+    | Response
+    | Promise<void | Response>;
 }
