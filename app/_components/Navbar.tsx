@@ -8,6 +8,7 @@ import {
 } from "@kinde-oss/kinde-auth-nextjs/server";
 import { ArrowRight } from "lucide-react";
 import UserAccountNav from "./UserAccountNav";
+import MobileNav from "./MobileNav";
 
 interface NavbarProps {}
 
@@ -24,7 +25,7 @@ const Navbar: React.FC<NavbarProps> = async ({}) => {
             <span>ReadingHelp.</span>
           </Link>
 
-          {/* add mobile navbar */}
+          <MobileNav isAuth={!!user} />
 
           <div className="hidden items-center space-x-4 sm:flex">
             {!user ? (

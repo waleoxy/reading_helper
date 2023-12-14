@@ -3,12 +3,16 @@ import MaxWidthWrapper from "../../_components/MaxWidthWrapper";
 import { redirect } from "next/navigation";
 import { db } from "../../../db";
 import DashboardDetailPage from "../../_components/DashboardDetailPage";
+import { getUserSubscriptionPlan } from "../../../lib/stripe";
 
 interface DashboardProps {}
 
 const Dashboard: React.FC<DashboardProps> = async ({}) => {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
+
+  const subscriptionPlan = await getUserSubscriptionPlan();
+
   if (!user || !user.id) {
     redirect("/auth-callback?origin=dashboard");
   }
@@ -25,7 +29,7 @@ const Dashboard: React.FC<DashboardProps> = async ({}) => {
   return (
     <MaxWidthWrapper>
       {" "}
-      <DashboardDetailPage />
+      <DashboardDetailPage subscriptionPlan={subscriptionPlan} />
     </MaxWidthWrapper>
   );
 };
