@@ -38,6 +38,7 @@ const PricingPage: React.FC<PricingPageProps> = async ({}) => {
         },
         {
           text: "Mobile-friendly interface",
+          negative: false,
         },
         {
           text: "Higher-quality responses",
@@ -58,20 +59,25 @@ const PricingPage: React.FC<PricingPageProps> = async ({}) => {
         {
           text: "25 pages per PDF",
           footnote: "The maximum amount of pages per PDF-file.",
+          negative: false,
         },
         {
           text: "16MB file size limit",
           footnote: "The maximum file size of a single PDF file.",
+          negative: false,
         },
         {
           text: "Mobile-friendly interface",
+          negative: false,
         },
         {
           text: "Higher-quality responses",
           footnote: "Better algorithmic responses for enhanced content quality",
+          negative: false,
         },
         {
           text: "Priority support",
+          negative: false,
         },
       ],
     },
